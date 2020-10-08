@@ -28,8 +28,103 @@
                 service postgresql status
             </code>
         </p>
-        <code>
-            <html>Example of code in here</html>
-        </code>
+        <p>
+            <h3>
+                Opening PSQL
+            </h3>
+            Setting up Postgresql will create a new 'postgres' user. Switch 
+            to that user by running:
+            <code>
+                su postgres
+            </code>
+            Now you're operating as your 'postgres' user and can run postgres.
+            <code>
+                psql
+            </code>
+            If you have a database already set up you can open right to it:
+            <code>
+                psql my_database_name
+            </code>
+        </p>
+        <p>
+            <h3>
+                Creating & Removing Databases
+            </h3>
+            Create a database using 'createdb' and give it a name:
+            <code>
+                createdb new_database_name
+            </code>
+            To remove it you can use 'dropdb':
+            <code>
+                dropdb my_database_name
+            </code>
+            'Create' and 'Drop' are keywords to recognize throughout PSQL.
+        </p>
+        <p>
+            <h3>
+                Creating & Removing Tables
+            </h3>
+            Now that you have a database it's time to make some tables to store your data in.
+            Open it using:
+            <code>
+                \c my_database_name
+            </code>
+            Here's where we start getting into PSQL commands - as a best practice they're written all caps. You'll use 'CREATE TABLE' to make them, but you'll need to add parameters.
+            <code>
+                CREATE TABLE first_table (
+            </code>
+            End that first line with an open paranthesis - PSQL won't run anything until you end with a semicolon.
+            <code>
+                first_column text,
+            </code>
+            Columns are made up of two items: column name and data type.
+            <code>
+                second_column integer
+            </code>
+            Then close it out.
+            <code>
+                );
+            </code>
+            Just like databases, if you want to remove a table, you DROP it.
+            <code>
+                DROP TABLE first_table;
+            </code>
+        </p>
+        <p>
+            <h3>
+                Adding Data to Your Tables
+            </h3>
+            Now you can start adding your data! We'll go over the simple manual process.
+            'INSERT INTO' is our keyword for inserting data into a table.
+            <code>
+                INSERT INTO first_table VALUES ('Text goes here', 0);
+            </code>
+            The 'VALUES' keyword specifies what exactly we're inserting. You have to enter
+            exactly what the table is expecting, so in our case we need something for first_column that is text
+            and second_column that is an integer.
+        </p>
+        <p>
+            <h3>
+                Updating Data
+            </h3>
+            Sometimes you add columns after you've started to put data in. To update an existing table use ALTER TABLE.
+            To add a new column:
+            <code>
+                ALTER TABLE first_table ADD COLUMN name text;
+            </code>
+            To update an existing row for this new column, you'll have to be specific and tell PSQL exactly which row you want to change.
+            <code>
+                UPDATE first_table SET name = 'Okoye' WHERE second_value = 0;
+            </code>
+        </p>
+        <p>
+            <h3>
+                Queries - How to see your data
+            </h3>
+            You can run a Query on your table to see how your data is going in.
+            <code>
+                SELECT * FROM first_table;
+            </code>
+        </p>
     </div>
 </body>

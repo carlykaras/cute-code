@@ -6,6 +6,7 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #fff;
+    color: #000;
 }
 
 h1 {
@@ -20,7 +21,8 @@ h3 {
 
 code {
     background-color: var(--main-color);
-    font-family: 'Lucida Sans Unicode';
+    color: #000;
+    font-family: monospace;
     display: block;
     padding: 5px;
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<header>
+    <link rel="stylesheet" href="styles.css" />
+</header>
+<body>
+    <div class = "section-container">
+        <h1>Welcome</h1>
+        <p>
+            <h3>Starting PSQL</h3>
+            I had to jump through a few hidden hoops to get PSQL up
+            and running on my Ubuntu WSL. Most sources will insist that Postgres
+            is already installed on Ubuntu but this proved not to be the case for me.
+            Instead I got the most recent package (Version 13 as of writing):
+            <code>
+                apt-get install postgresql-13
+            </code>
+        </p>
+        <p>
+            <h3>
+                Starting your Server
+            </h3>
+            I had to start my server cluster??
+            <code>
+                sudo pg_ctlcluster 13 main start
+            </code>
+            You can check if your server is running with
+            <code>
+                service postgresql status
+            </code>
+        </p>
+        <code>
+            <html>Example of code in here</html>
+        </code>
+    </div>
+</body>
